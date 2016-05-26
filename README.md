@@ -99,6 +99,18 @@ for event in pygame.event.get() :
 				0 <= event.pos[1] and event.pos[1] <= 100 :
 				sys.exit(0)
 ```
+게임을 만들다 보면 키가 입력받는 순간이 아니라도 키가 지금 당장 눌려있는지 확인해야 할 상황이 생길 수 있다. 예를 들어, 횡스크롤 게임에서 방향키로 캐릭터를 움직인다고 하면 KEYDOWN event만 갖고는 충분한 인풋을 받을 수 없다.
+```python
+key = pygame.key.get_pressed()
+```
+이 get_pressed()함수를 통해서 그 프레임 때 키가 눌려있었는지 확인할 수 있다. 그래서 왼쪽 방향키가 눌려있을 때 어떤 행동을 할지를
+```python
+key = pygame.key.get_pressed()
+if key[K_LEFT] :
+	# TODO: 캐릭터 왼쪽으로 움직임
+```
+이런 식으로 만들 수 있다.
+
 그래서 pygame 소스의 기본적인 형태는 아래와 같게 된다
 ```python
 # -*- coding: utf-8 -*-
