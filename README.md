@@ -51,14 +51,15 @@ http://www.pygame.org/docs/ref/key.html
 등의 값을 가진다.
 event.type이 MOUSEBUTTONDOWN일 경우, event.button 값이 왼쪽 버튼일 경우 1, 오른쪽 버튼일 경우 3이 들어간다. 또, event.pos에 마우스 커서의 위치가 들어간다.
 그래서 만약 ESC키를 입력하거나 (0,0),(100,100)사이를 마우스왼쪽버튼 클릭할 경우 프로그램이 종료되도록 하고 싶다면 아래의 코드를 프레임 부분에 추가하면 된다.
-
-for event in pygame.event.get() : <br>
-	if event.type==KEYDOWN : <br>
-		if event.key == K_ESCAPE : <br>
-			sys.exit(0) <br>
-	if event.type == MOUSEBUTTONDOWN : <br>
-		if event.button == 1: <br>
-			if 0 <= event.pos[0] and event.pos[0[] <= 100 and \ <br>
-				0 <= event.pos[1] and event.pos[1] <= 100 : <br>
-				sys.exit(0) <br>
+```python
+for event in pygame.event.get() :
+	if event.type==KEYDOWN :
+		if event.key == K_ESCAPE :
+			sys.exit(0)
+	if event.type == MOUSEBUTTONDOWN :
+		if event.button == 1:
+			if 0 <= event.pos[0] and event.pos[0[] <= 100 and \
+				0 <= event.pos[1] and event.pos[1] <= 100 :
+				sys.exit(0)
+```
 
