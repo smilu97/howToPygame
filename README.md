@@ -138,7 +138,12 @@ while True :
 			elif event.button == 3:
 				# TODO : 마우스 오른쪽 버튼 입력시
 				pass
-
+	if key[K_LEFT] :
+		# TODO: 왼쪽 키 눌려있을 때
+		pass
+	if key[K_RIGHT] :
+		# TODO: 오른쪽 키 눌려있을 때
+		pass
 	screen.fill((0,0,0))
 	# TODO : screen.blit등을 이용해서 여기서 렌더링
 
